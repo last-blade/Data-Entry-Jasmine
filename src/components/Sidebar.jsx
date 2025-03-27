@@ -32,7 +32,7 @@ function Sidebar({ isOpen, onToggle, activeMenu, onMenuClick }) {
             </ul>
           </nav>
           </div>
-          <div className="flex items-center justify-start pt-5 pb-5 pl-2">
+          <div className="flex items-center justify-center pt-5 pb-5 ">
             <button className="logoutBtn">Logout</button>
           </div>
         </aside>
