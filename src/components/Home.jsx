@@ -1,36 +1,36 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from 'react'
-import Sidebar from './Sidebar'
-import LabRecipeForm from './LabRecipeForm'
+import { useState, useEffect } from "react";
+import Sidebar from "./Sidebar";
+import LabRecipeForm from "./LabRecipeForm";
 
 function Home() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [activeMenu, setActiveMenu] = useState('Lab Recipe')
-  const [pageLoaded, setPageLoaded] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("Lab Recipe");
+  const [pageLoaded, setPageLoaded] = useState(false);
 
   useEffect(() => {
     // Add animation class after component mounts
-    setPageLoaded(true)
-  }, [])
+    setPageLoaded(true);
+  }, []);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen)
-  }
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   const handleMenuClick = (menuItem) => {
-    setActiveMenu(menuItem)
+    setActiveMenu(menuItem);
     // On mobile, close the sidebar after selecting a menu item
     if (window.innerWidth < 768) {
-      setIsSidebarOpen(false)
+      setIsSidebarOpen(false);
     }
-  }
+  };
 
   return (
-    <div className={`home-container ${pageLoaded ? 'loaded' : ''}`}>
-      <Sidebar 
-        isOpen={isSidebarOpen} 
-        onToggle={toggleSidebar} 
+    <div className={`home-container ${pageLoaded ? "loaded" : ""}`}>
+      <Sidebar
+        isOpen={isSidebarOpen}
+        onToggle={toggleSidebar}
         activeMenu={activeMenu}
         onMenuClick={handleMenuClick}
       />
@@ -55,8 +55,8 @@ function Home() {
             <h2>{activeMenu}</h2>
             <p className="breadcrumb">Dashboard / {activeMenu}</p>
           </div>
-          {activeMenu === 'Lab Recipe' && <LabRecipeForm />}
-          {activeMenu !== 'Lab Recipe' && (
+          {activeMenu === "Lab Recipe" && <LabRecipeForm />}
+          {activeMenu !== "Lab Recipe" && (
             <div className="placeholder-content">
               <div className="placeholder-icon"></div>
               <h2>{activeMenu} Content</h2>
@@ -66,7 +66,7 @@ function Home() {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
