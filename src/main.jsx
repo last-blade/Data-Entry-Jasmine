@@ -4,6 +4,7 @@ import './index.css'
 import './responsive.css'
 import App from './App.jsx'
 import setupLocatorUI from "@locator/runtime";
+import 'aos/dist/aos.css'
 if (import.meta.env.MODE === "development") {
   setupLocatorUI();
 }
